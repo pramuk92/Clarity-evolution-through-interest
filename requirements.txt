@@ -1,5 +1,6 @@
 streamlit==1.51.0
 pandas==2.3.3
 numpy==2.3.4
-python-dateutil==2.9.0.post0
-pytz==2025.2
+plotly==6.4.0
+yfinance==0.2.18
+requests==2.32.5
