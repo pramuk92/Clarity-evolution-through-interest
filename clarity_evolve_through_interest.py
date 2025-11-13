@@ -24,7 +24,7 @@ VALID_PAIRS = [
     'GBP/JPY', 'GBP/CHF', 'GBP/AUD', 'GBP/CAD', 'GBP/NZD',
     'AUD/JPY', 'CAD/JPY', 'CHF/JPY', 'NZD/JPY',
     'AUD/CAD', 'AUD/CHF', 'AUD/NZD',
-    'CAD/CHF', 'NZD/CAD', 'NZD/CHF'
+    'CAD/CHF', 'NZDCAD', 'NZD/CHF'
 ]
 
 # Cache market data to reduce API calls
@@ -188,15 +188,15 @@ def generate_trading_signals(watchlist, market_regime):
                     "Rationale": pair_info['rationale']
                 }
                 
-                # Add specific entry recommendations
+                # Add specific entry recommendations - FIXED THE SYNTAX ERROR HERE
                 if category == "Primary Opportunities":
                     signal["Entry"] = "Wait for pullback to support"
                     signal["Stop"] = "1-2% below entry"
-                    signal["Target"]": "2:1 risk-reward"
+                    signal["Target"] = "2:1 risk-reward"  # FIXED: Removed extra quote
                 else:
                     signal["Entry"] = "Conservative entry on confirmation"
                     signal["Stop"] = "Wider stop for volatility"
-                    signal["Target"]": "1.5:1 risk-reward"
+                    signal["Target"] = "1.5:1 risk-reward"  # FIXED: Removed extra quote
                 
                 signals.append(signal)
     
